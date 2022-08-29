@@ -8,6 +8,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+a {
+    text-decoration: none; /* Para que no se vea subrayado el hipervínculo (entre otras cosas ¿?)*/
+}
+
 .padre{
     display: flex;
     flex-flow: column nowrap; /*QUE ES*/
@@ -33,6 +37,8 @@ body {
 
         .logo{
             flex: 1 1 auto;
+            text-align: center;
+            align-items: center;
         }
 
             .logo a{
@@ -46,11 +52,16 @@ body {
 
         .nav{
             flex: 5 1 auto; /* 5 1 auto hace que se ajuste el tamaño como a escala 5 1 respecto a los demás contenedores*/
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
         }
 
             .nav a {
                 color: #fff;
-                font-size: 11px;
+                font-size: 18px;
                 text-transform: uppercase;
                 padding: 0 10 px;
                 letter-spacing: 2px;
@@ -75,54 +86,100 @@ body {
                 color: #134644;
             }
     
-        .texto-principal{
-            background: #169868;
-            
+        .texto-principal{      
+            height: 90vh; /*vh es de viewport, v es de view y h es de height. Es una medida porcentual */
+            display: flex;
+            align-items: center;  
         }
 
             h1{
-                background: #134644;
+                font-family: 'Fira Sans', sans-serif;
+                font-size: 21px;
+                color: #fff;
+                font-weight: 300;
+                text-align: center;
+                line-height: 1.6;
             }
     
             .section{
-                background-color: cornflowerblue;
                 display: flex;
             }
                 .articulos{
-                    background-color: lightseagreen;
+                    background-color: #f7f7f7;
                     flex: 2 1 auto; /*Significa que es 2 veces más grande que el otro*/
                     display: flex;
                     flex-flow: row wrap; 
                 }
                     .article{
-                        background-color: darkslategrey;
-                        flex: 1 1 40%;
+                        flex: 1 1 45%;
+                        color: #123451;
+                        font-size: 15px;
+                        letter-spacing: 1.5px; /* Espaciado de la letra */
+                        margin: 10px 10px 10px 10px;
                     }
+
+                        .article img {
+                            width: 100%;
+                        }
+
+                        .article h3{
+                            color: #fff;
+                            font-size: 16px;
+                            padding: 10px 0;
+                            margin-top: -70px;
+                            letter-spacing: 1px;
+                        }
+
+                        .article h2{
+                            color: #fff;
+                            text-transform: uppercase;
+                            padding: 0 0 10px 0; /* Arr Abj Izq Der*/
+                        }
 
                     .navegacion{
-                        background-color: olive;
                         flex: 1 1 100%;
+                        height: 50px;
+                        background: #000;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
                     }
 
+                        .navegacion a {
+                            color:#fff;
+                            font-size: 12px;
+                            font-weight: 800;
+                            font-family: 'Fira Sans', sans-serif;
+                        }
+
                 .aside{
-                    background-color: seagreen;
                     flex: 1 1 auto;
+                    background-color: #fff  ;
                 }
 
                     .publicidad{
-                        background-color: steelblue;
+
                     }
+
+                        .publicidad img{
+                            width: 200px;
+                        }
             
             .footer{
-                background-color:royalblue;
+                background: #000;
                 display: flex;
                 justify-content: center;
             }
 
                 .pie{
-                    background-color: gray;
-                    width: 300px;
+                    width: fit-content;
                 }
+
+                    .pie a {
+                        color: #fff;
+                        font-size: 15px;
+                    }
 
 /* Se especifican tamaños y diseños de acuerdo al tamaño de la pantalla, menor a 800px, menor a 600px y menor a 400px */
 @media all and (max-width: 800px){
